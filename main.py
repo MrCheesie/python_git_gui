@@ -31,7 +31,7 @@ def commit(commit_msg) -> str:
 
 def push() -> str:
     result = subprocess.run(['git', 'push'], check=True, text=True, capture_output=True)
-    return result.stdout
+    return result.stdout or result.stderr
 
 def pull() -> str:
     result = subprocess.run(['git', 'pull'], check=True, capture_output=True, text=True)
@@ -48,7 +48,10 @@ def on_commit():
         messagebox.showwarning("Error", "Enter a commit message")
 
 def on_push() -> None:
-    messagebox.showinfo("Push successful", message=push())
+    try:
+        messagebox.showinfo("Push successful", push())
+    except subprocess.CalledProcessError as e:
+        messagebox.showerror("Push failed", e.stderr or str(e))
 
 def on_pull() -> None:
     messagebox.showinfo("Push successful", message=pull())
