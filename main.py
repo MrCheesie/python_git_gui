@@ -7,9 +7,9 @@ Created on Fri Oct 2 2:01pm 2026
 """
 
 import os
-import webbrowser
-from pydoc import text
 import subprocess
+import sys
+import webbrowser
 from tkinter import *  # pyright: ignore[reportWildcardImportFromLibrary]
 from tkinter import messagebox
 
@@ -86,6 +86,8 @@ def main():
     # check if git repo
     if not os.path.isdir(".git"):
         print("fatal: Not a git repo")
+        messagebox.showerror("Fatal", "Not a git repository. Initialise with 'git init'")
+        sys.exit()
     else:
         print("is a git repo")
 
