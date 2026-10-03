@@ -6,12 +6,12 @@ Created on Fri Oct 2 2:01pm 2026
 @author: Alris Dhanwani
 """
 
-import os
-import subprocess
-import sys
-import webbrowser
 from tkinter import *  # pyright: ignore[reportWildcardImportFromLibrary]
 from tkinter import messagebox
+lazy import os
+lazy import subprocess
+lazy import sys
+lazy import webbrowser
 
 VERSION: str = "0.0.1"
 
