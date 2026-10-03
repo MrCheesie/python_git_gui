@@ -26,7 +26,7 @@ commit_msg_entry = Entry(WINDOW)
 
 def commit(commit_msg) -> str:
     subprocess.run(['git', 'add', '.'], check=True)
-    commit_result = subprocess.run(['git', 'commit', '-m', f"\"{commit_msg}\""], shell=False, check=True, text=True, capture_output=True)
+    commit_result = subprocess.run(['git', 'commit', '-m', f"{commit_msg}"], shell=False, check=True, text=True, capture_output=False)
     return commit_result.stdout
 
 def push() -> str:
@@ -38,7 +38,7 @@ def pull() -> str:
     return result.stdout
 
 
-def on_commit():
+def on_commit() -> None:
     message: str = commit_msg_entry.get().strip()
 
     if message:
@@ -82,7 +82,7 @@ credit_menu.add_command(label="GitHub Repo", command=lambda: webbrowser.open("ht
 
 
 # main func
-def main():
+def main() -> None:
     # check if git repo
     if not os.path.isdir(".git"):
         print("fatal: Not a git repo")
