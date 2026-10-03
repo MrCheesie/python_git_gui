@@ -1,7 +1,7 @@
 # Tkinter GUI for Git
 
-> [!NOTE] **Unintended behaviour**
-> This may have unintended behaviour on Windows and Linux.
+> <mark>Unintended behaviour:</mark><br>
+> This program may have unintended behaviour on Windows and Linux.
 
 ## Description
 
