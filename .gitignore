@@ -1,1 +1,5 @@
+# system files
 .DS_Store
+desktop.ini
+# virtual environment
+.venv
