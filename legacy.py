@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-# Requires python 3.15 or above
-
+# Legacy version - works on older versions of python
 """
 Created on Fri Oct 2 2:01pm 2026
 
@@ -10,10 +9,10 @@ Created on Fri Oct 2 2:01pm 2026
 
 from tkinter import *  # pyright: ignore[reportWildcardImportFromLibrary]
 from tkinter import messagebox
-lazy import os
-lazy import subprocess
-lazy import sys
-lazy import webbrowser
+import os
+import subprocess
+import sys
+import webbrowser
 
 VERSION: str = "0.0.1"
 
