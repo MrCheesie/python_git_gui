@@ -3,3 +3,8 @@
 desktop.ini
 # virtual environment
 .venv
+
+# ide files
+.idea/
+.vscode/
+.zed/

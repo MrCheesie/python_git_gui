@@ -24,7 +24,6 @@ WINDOW.geometry("200x200")
 commit_msg_entry = Entry(WINDOW)
 
 
-
 def commit(commit_msg) -> str:
     subprocess.run(['git', 'add', '.'], check=True)
     commit_result = subprocess.run(['git', 'commit', '-m', f"{commit_msg}"], shell=False, check=True, text=True, capture_output=True)
